@@ -25,7 +25,8 @@ include:
     {%- set protocol  = service_details.get('protocol', None) %}
     {%- set deny      = service_details.get('deny', None) %}
     {%- set limit     = service_details.get('limit', None) %}
-    {%- set method    = 'deny' if deny else ('limit' if limit else 'allow') %}
+    {%- set allow_out     = service_details.get('allow_out', None) %}
+    {%- set method    = 'deny' if deny else ('limit' if limit else ('allow_out' if allow_out else 'allow')) %}
     {%- set from_port = service_details.get('from_port', None) %}
     {%- set to_addr   = service_details.get('to_addr', None) %}
     {%- set to_port   = service_details.get('to_port', service_name) %}

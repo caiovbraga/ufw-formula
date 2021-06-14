@@ -216,3 +216,8 @@ def allowed(name, app=None, interface=None, protocol=None,
     allow() is aliased to allowed() to maintain backwards compatibility.
     """
     return allow(name, app, interface, protocol, from_addr, from_port, to_addr, to_port, comment)
+
+def allow_out(name, app=None, interface=None, protocol=None,
+          from_addr=None, from_port=None, to_addr=None, to_port=None, comment=None):
+
+    return _add_rule('allow out', name, app, interface, protocol, from_addr, from_port, to_addr, to_port, comment)
