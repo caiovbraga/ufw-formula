@@ -4,6 +4,7 @@
 include:
   - .file
   - .services
+  - .services-base
   - .applications
   - .interfaces
   - .open
